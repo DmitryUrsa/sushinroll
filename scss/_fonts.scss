@@ -1,0 +1,6 @@
+@import "_mixins/font-face";
+
+@include font-face("Geometria", "../fonts/Geometria/Geometria");
+@include font-face("Geometria", "../fonts/Geometria/Geometria-Bold", bold);
+@include font-face("Geometria", "../fonts/Geometria/Geometria-Medium", 500);
+@include font-face("HanZi", "../fonts/HanZi/HanZi");

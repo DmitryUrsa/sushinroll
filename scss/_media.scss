@@ -1,0 +1,278 @@
+@import "vars";
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
+@include media-breakpoint-down(lg) {
+  .header .mobile-menu-switch {
+    display: inline-flex;
+  }
+  .header .main-menu {
+    > ul {
+      display: none;
+      position: absolute;
+      right: 15px;
+      top: 100%;
+      flex-direction: column;
+      background-color: #FFF5EE;
+      z-index: 160;
+      padding: 0 15px;
+      > li {
+        > a {
+          width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+          min-height: 35px;
+          height: auto;
+          padding-top: 0;
+          border-bottom: 0;
+          text-align: right;
+        }
+      }
+    }
+  }
+  .product-item {
+    width: 33%;
+  }
+	.about-us-img__sticks {
+    right: -51px;
+    top: 5px;
+    height: 310px;
+  }
+  .footer {
+    .main-menu ul>li>a {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .contact-phone {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      &__number {
+        justify-content: flex-end;
+      }
+    }
+    .logo {
+      height: 50px;
+      width: auto;
+    }
+  }
+  .footer-line {
+    margin-right: 0;
+    .email {
+      margin-right: 0;
+    }
+  }
+  .sakura {
+    &::before, &::after {
+      display: none;
+    }
+  }
+}
+
+// ≥992px
+@include media-breakpoint-down(md) {
+  .header {
+    .logo {
+      order: 0;
+      width: 50%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .current-city {
+      order: 2;
+      margin-left: 0;
+      flex-direction: row;
+      align-items: center;
+      p {
+        margin-right: 8px;
+      }
+    }
+
+    .contact-phone {
+      width: 50%;
+      order: 1;
+      margin: 0;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .main-menu {
+      order: 3;
+    }
+  }
+  .product-item {
+    width: 50%;
+  }
+  .main-screen {
+    min-height: 640px;
+    .ui-button {
+      margin-top: 470px;
+    }
+  }
+  .about-us-img__sticks {
+    right: -61px;
+    top: 8px;
+    height: auto;
+  }
+  .about-us-text {
+    padding-top: 20px;
+  }
+  .review {
+    max-width: 320px;
+  }
+  .footer-line {
+    flex-wrap: wrap;
+    .logo {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .main-menu {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .contact-phone {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+}
+
+// ≥768px
+@include media-breakpoint-down(sm) {
+  .about-us-img__sticks {
+    right: -56px;
+    top: 6px;
+    height: 343px;
+  }
+  .main-screen {
+    min-height: 500px;
+    .ui-button {
+      margin-top: 370px;
+    }
+  }
+  .review {
+    max-width: 100%;
+  }
+  .flickity-page-dots {
+    bottom: -35px;
+  }
+  .flickity-prev-next-button {
+    bottom: -67px;
+  }
+  
+  .footer-line {
+    justify-content: center;
+    .copy {
+      margin-bottom: 10px;
+    }
+    .site-desc {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+
+}
+
+// ≥576px
+@include media-breakpoint-down(xs) {
+  .about-us-img__sticks {
+    display: none;
+  }
+  .header {
+    .logo {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .contact-phone {
+      width: 100%;
+      align-items: center;
+    }
+  }
+  .product-item {
+    width: 100%;
+    max-width: 300px;
+  }
+  .product-grid {
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .heading-line {
+    a {
+      display: none;
+    }
+  }
+  .main-screen {
+    min-height: 400px;
+    .ui-button {
+      margin-top: 300px;
+    }
+  }
+  .footer-line {
+    .main-menu ul>li>a {
+      font-size: 12px;
+      height: 40px;
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+  }
+  .styled-header {
+    font-size: 32px;
+  }
+  .section-margin-bottom {
+    margin-bottom: 30px;
+  }
+  .section-margin-top {
+    margin-top: 30px;
+  }
+  .section-padding-bottom {
+    padding-bottom: 30px;
+  }
+  .section-padding-top {
+    padding-top: 30px;
+  }
+
+}
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
+@include media-breakpoint-up(sm) {
+
+}
+
+// ≤768px
+@include media-breakpoint-up(md) {
+
+}
+
+// ≤992px
+@include media-breakpoint-up(lg) {
+
+}
+
+// ≤1200px
+@include media-breakpoint-up(xl) {
+  .main-menu {
+    > ul {
+      display: flex!important;
+    }
+  }
+	
+}
