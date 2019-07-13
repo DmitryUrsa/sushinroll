@@ -81,6 +81,11 @@
       margin-bottom: 10px;
     }
   }
+  .gallery {
+    &__item {
+      width: 215px;
+    }
+  }
 }
 
 // ≥992px
@@ -259,6 +264,15 @@
     &__logo {
       margin-right: 0;
     }
+  }
+  .gallery {
+    justify-content: space-around;
+    &__item {
+      width: 100%;
+    }
+  }
+  .headline__text {
+    font-size: 36px;
   }
 
 }

@@ -43,7 +43,48 @@ body {
 		}
 	}
 }
-
+ul, ol {
+	margin: 0;
+	& > li {
+		margin-bottom: 10px;
+	}
+}
+ul.dashed {
+  list-style-type: none;
+}
+ul.dashed > li {
+	position: relative;
+}
+ul.dashed > li:before {
+	content: "";
+	height: 1px;
+	width: 15px;
+	display: inline-block;
+	background: #333;
+	position: absolute;
+	left: -30px;
+	top: 13px;
+}
+h1 {
+	font-size: 32px;
+	margin-bottom: 25px;
+}
+h2 {
+	font-size: 29px;
+	margin-bottom: 25px;
+}
+h3 {
+	font-size: 26px;
+	margin-bottom: 25px;
+}
+h4 {
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+h5 {
+	font-size: 18px;
+	margin-bottom: 15px;
+}
 .img-responsive {
 	display: block;
 	max-width: 100%;
@@ -71,6 +112,9 @@ b, strong {
 		border-bottom-color: transparent;
 		color: $accent;
 		text-decoration: none;
+	}
+	img {
+		border-bottom:none!important;
 	}
 }
 
@@ -732,6 +776,12 @@ b, strong {
 			visibility: visible;
 		}
 	}
+
+	&--footer {
+		&::before {
+			top: -145%;
+		}
+	}
 }
 .sakura-6 {
 	&::after {
@@ -755,6 +805,12 @@ b, strong {
 			-webkit-animation-name: fadeInUp;
 			animation-name: fadeInUp;
 			visibility: visible;
+		}
+	}
+
+	&--footer {
+		&::after {
+			bottom: 50px;
 		}
 	}
 }
@@ -982,6 +1038,86 @@ b, strong {
 	height: 65px;
 	background: #dddddd;
 	margin-right: 25px;
+}
+
+.gallery {
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	&__item {
+		width: 235px;
+		height: 200px;
+		margin-bottom: 30px;
+		position: relative;
+		border: none;
+		img {
+			height: 100%;
+			
+			@supports (object-fit: cover) {
+				object-fit: cover;
+				width: 100%;
+			} 
+		}
+
+		&::before {
+			content:'';
+			background: #ffffff url('../svg/search.svg') center no-repeat;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			transition: opacity 300ms ease;
+		}
+
+		&:hover {
+			&:before {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.quote {
+	padding-left: 100px;
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 63px;
+		height: 47px;
+		background: url('../svg/quote.svg') center no-repeat;
+		position: absolute;
+		left: 0;
+		top: 0;
+
+	}
+}
+
+.table-outer {
+	overflow-x: auto;
+}
+table.styled-table {
+	width: 100%;
+	background: #FFFFFF;
+	border: 1px solid #E2CDBF;
+	tr {
+		th {
+			background: #9C6D4B;
+			color: #fff;
+			padding: 15px 20px;
+			font-weight: 500;
+		}
+		td {
+			padding: 15px 20px;
+		}
+	}
 }
 
 @import "media"; // Always at the end
