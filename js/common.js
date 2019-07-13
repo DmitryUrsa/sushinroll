@@ -14,5 +14,15 @@ $(function() {
 		draggable: '>1',
 		adaptiveHeight: true
 	});
+	$(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 122) {
+        $('.header').addClass('fixed animated fadeInDown');
+        $('main').addClass('fixed-header');
+        
+    } else {
+				$('.header').removeClass('fixed animated fadeInDown');
+				$('main').removeClass('fixed-header');
+    }
+	});
 
 });

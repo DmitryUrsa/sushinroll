@@ -66,7 +66,7 @@
   }
   .sakura {
     &::before, &::after {
-      display: none;
+      display: none!important;
     }
   }
 }
@@ -110,12 +110,6 @@
   .product-item {
     width: 50%;
   }
-  .main-screen {
-    min-height: 640px;
-    .ui-button {
-      margin-top: 470px;
-    }
-  }
   .about-us-img__sticks {
     right: -61px;
     top: 8px;
@@ -157,12 +151,6 @@
     right: -56px;
     top: 6px;
     height: 343px;
-  }
-  .main-screen {
-    min-height: 500px;
-    .ui-button {
-      margin-top: 370px;
-    }
   }
   .review {
     max-width: 100%;
@@ -217,12 +205,6 @@
       display: none;
     }
   }
-  .main-screen {
-    min-height: 400px;
-    .ui-button {
-      margin-top: 300px;
-    }
-  }
   .footer-line {
     .main-menu ul>li>a {
       font-size: 12px;
@@ -246,7 +228,58 @@
   .section-padding-top {
     padding-top: 30px;
   }
+  .headline {
+    &__inner {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &__logo {
+      margin-right: 0;
+    }
+  }
 
+}
+
+@media screen and (max-height: 755px) {
+  .main-screen__logo {
+    img {
+      margin: 0 auto;
+      width: 600px;
+    }
+  }
+}
+
+@media screen and (max-height: 655px) {
+  .main-screen__logo {
+    img {
+      margin: 0 auto;
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (max-height: 555px) {
+  .main-screen__logo {
+    img {
+      margin: 0 auto;
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-height: 400px) {
+  .main-screen{
+    &__logo {
+      img {
+        margin: 0 auto;
+        width: 200px;
+      }
+    }
+    .ui-button {
+      margin-top: 30px;
+    }
+  }
 }
 
 

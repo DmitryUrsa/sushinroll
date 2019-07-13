@@ -111,6 +111,16 @@ b, strong {
 	.current-city {
 		margin-left: 35px;
 	}
+	&.fixed {
+		width: 100%;
+		position: fixed;
+	}
+}
+
+.app {
+	.fixed-header {
+		padding-top: 122px;
+	}
 }
 
 .logo {
@@ -119,6 +129,9 @@ b, strong {
 	height: 57px;
 	svg {
 		height: 100%;
+	}
+	&:focus {
+		outline: none;
 	}
 }
 
@@ -276,13 +289,20 @@ b, strong {
 .main-screen {
 	max-width: 1920px;
 	width: 100%;
-	min-height: 840px;
-	background: url('../img/main-image.jpg') center center no-repeat;
+	height: calc(100vh - 122px);
+	background: url('../img/big__image.jpg') center center no-repeat;
 	background-size: cover;
 	margin: 0 auto;
 	text-align: center;
-	.ui-button {
-		margin-top: 630px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	&__block {
+		.ui-button {
+			margin-top: 70px;
+		}
 	}
 }
 
@@ -566,73 +586,150 @@ b, strong {
 .sakura-1 {
 	&::before {
 		content: '';
-		width: 433px;
+		width: 360px;
 		height: 385px;
 		background: url('../img/sakura-1.png') center center no-repeat;
 		background-size: contain;
 		position: absolute;
-		right: -46px;
-    top: 32px;
+		right: 0;
+		top: 32px;
+		visibility: hidden;
+	}
+	&.animated {
+		&::before {
+			visibility: hidden;
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			-webkit-animation-name: fadeInDown;
+			animation-name: fadeInDown;
+			visibility: visible;
+		}
 	}
 }
 .sakura-2 {
 	&::after {
 		content: '';
-		width: 568px;
+		width: 430px;
 		height: 501px;
 		background: url('../img/sakura-2.png') center center no-repeat;
 		background-size: contain;
 		position: absolute;
-		left: -80px;
-    top: 26%;
+		left: 0;
+		top: 26%;
+		visibility: hidden;
+	}
+	&.animated {
+		&::after {
+			-webkit-animation-duration: 4s;
+			animation-duration: 4s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			-webkit-animation-name: fadeInUp;
+			animation-name: fadeInUp;
+			visibility: visible;
+		}
 	}
 }
 .sakura-3 {
 	&::before {
 		content: '';
-		width: 568px;
+		width: 535px;
 		height: 501px;
 		background: url('../img/sakura-3.png') center center no-repeat;
 		background-size: contain;
 		position: absolute;
-		right: -30px;
-    top: -245px;
+		right: 0;
+		top: -245px;
+		visibility: hidden;
+	}
+	&.animated {
+		&::before {
+			display: block;
+			-webkit-animation-duration: 3s;
+			animation-duration: 3s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			-webkit-animation-name: fadeInRight;
+			animation-name: fadeInRight;
+			visibility: visible;
+		}
 	}
 }
 .sakura-4 {
 	&::after {
 		content: '';
-		width: 433px;
+		width: 375px;
 		height: 385px;
 		background: url('../img/sakura-4.png') center center no-repeat;
 		background-size: contain;
 		position: absolute;
 		top: 42%;
-    left: -35px;
+		left: 0;
+		visibility: hidden;
+	}
+	&.animated {
+		&::after {
+			display: block;
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			-webkit-animation-name: fadeInLeft;
+			animation-name: fadeInLeft;
+			visibility: visible;
+		}
 	}
 }
 .sakura-5 {
 	&::before {
 		content: '';
-		width: 433px;
+		width: 355px;
 		height: 385px;
 		background: url('../img/sakura-5.png') center center no-repeat;
 		background-size: contain;
 		position: absolute;
-		right: -45px;
-    top: 50%;
+		right: 0;
+		top: 50%;
+		visibility: hidden;
+	}
+	&.animated {
+		&::before {
+			display: block;
+			-webkit-animation-duration: 3s;
+			animation-duration: 3s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			-webkit-animation-name: fadeInUp;
+			animation-name: fadeInUp;
+			visibility: visible;
+		}
 	}
 }
 .sakura-6 {
 	&::after {
 		content: '';
-		width: 568px;
+		width: 475px;
 		height: 345px;
 		background: url('../img/sakura-6.png') center center no-repeat;
 		background-size: contain;
 		position: absolute;
-		left: -75px;
-    bottom: -281px;
+		left: 0;
+		bottom: -281px;
+		visibility: hidden;
+	}
+	&.animated {
+		&::after {
+			display: block;
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			-webkit-animation-name: fadeInUp;
+			animation-name: fadeInUp;
+			visibility: visible;
+		}
 	}
 }
 
@@ -640,6 +737,65 @@ b, strong {
 	visibility: hidden;
 	&.animated {
 		visibility: visible;
+	}
+}
+
+.headline {
+	background: url('../img/headline-bg.jpg') center no-repeat;
+	background-size: cover;
+	min-height: 210px;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+	}
+	&__logo {
+		margin-right: 40px;
+		width: 190px;
+		img {
+			width: 100%;
+		}
+	}
+	&__text {
+		font-family: $secondary-font;
+		font-size: 54px;
+		line-height: 67px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		font-weight: normal;
+
+		color: #E5E5E5;
+
+		text-shadow: 2px 4px 1px #000000;
+		margin: 0;
+	}
+}
+
+.category-item {
+	color: #333333;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	transition: all 200ms;
+	&:hover {
+		background: #ffe5d3;
+		color: #333333;
+		text-decoration: none;
+	}
+	&__name {
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-top: 20px;
 	}
 }
 @import "media"; // Always at the end
