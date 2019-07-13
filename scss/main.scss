@@ -20,9 +20,21 @@ body {
 	overflow-x: hidden;
 	color: $text;
 	background-color: #fff5ee;
-	input, textarea {
-		border: #666 1px solid;
+	// Forms 
+	input[type=text],
+	input[type=tel],
+	input[type=email],
+	input[type=number],
+	textarea {
+		background: #FFFFFF;
+		border: 1px solid #D5B9A5;
+		min-width: 235px;
+		min-height: 45px;
+		padding: 10px 25px;
 		outline: none;
+		&:focus {
+			border: 1px solid #C05C16;
+		}
 		&:focus:required:invalid {
 			border-color: red;
 		}
@@ -87,6 +99,14 @@ b, strong {
 	&--mail {
 		width: 18px;
 		height: 13px;
+	}
+	&--clock {
+		width: 19px;
+		height: 19px;
+	}
+	&--phone {
+		width: 17px;
+		height: 17px;
 	}
 }
 
@@ -656,6 +676,12 @@ b, strong {
 			visibility: visible;
 		}
 	}
+
+	&--contacts {
+		&::before {
+			top: -75px;
+		}
+	}
 }
 .sakura-4 {
 	&::after {
@@ -798,4 +824,164 @@ b, strong {
 		margin-top: 20px;
 	}
 }
+
+// Tabs plugin source: https://codepen.io/Vikaspatel/pen/VJGYpv
+.tab-container {
+	max-width: 100%;
+	margin: 0 auto;
+}
+.tab-container .tab-menu {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+}
+.tab-container .tab-menu li a {
+	min-width: 160px;
+	height: 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #333333;
+	border: 1px solid #E2CCBC;
+	background: #ffffff;
+	&:hover {
+		color: #333333;
+		text-decoration: none;
+		border-color: $accent
+	}
+}
+.tabs-containe {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 70px;
+}
+.tab-container .tab-menu li.active-tab a {
+	border: 2px solid $accent;
+	font-weight: bold;
+	color: $accent;
+}
+.tab-data {
+	position: relative;
+	overflow: hidden;
+}
+.tab-data .data-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	bottom: 0;
+	transition: 500ms all;
+}
+.tab-data .data-content.active-data {
+	opacity: 1;
+	visibility: visible;
+	position: relative;
+}
+.tab-data-wrap {
+	transition: 500ms all;
+	transform: translate3d(0,0,0);
+}
+.prev .tab-data-wrap {
+	transform: translate3d(-100%,0,0);
+}
+.next .tab-data-wrap {
+	transform: translate3d(100%,0,0);
+}
+.active-data .tab-data-wrap {
+	transform: translate3d(0,0,0);
+}
+
+.contact-data {
+	&__city {
+		font-size: 38px;
+		font-weight: 500;
+		margin-bottom: 30px;
+		line-height: 1;
+	}
+	&__item {
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+		.svg-icon {
+			margin-right: 15px;
+		}
+	}
+	.contact-phone__number {
+		.svg-icon--whatsapp {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+	}
+}
+
+.map {
+	width: 100%;
+	height: 380px;
+	&--placeholder {
+		background: #dddddd;
+	}
+}
+
+.simple-header {
+	font-size: 38px;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+
+
+
+.label-text {
+	margin-bottom: 5px;
+	color: #333333;
+}
+
+.is-required {
+	color: red;
+}
+
+.form-col-3 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	input, label {
+		max-width: 235px;
+	}
+}
+
+.form-col-full {
+	textarea, input, label {
+		width: 100%;
+	}
+}
+
+.contact-us-form {
+	.form-col-full {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.form-col-button {
+		text-align: right;
+		display: flex;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+	}
+}
+
+.recapcha {
+	display: inline-block;
+	width: 275px;
+	height: 65px;
+	background: #dddddd;
+	margin-right: 25px;
+}
+
 @import "media"; // Always at the end

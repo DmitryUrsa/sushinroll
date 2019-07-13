@@ -69,6 +69,18 @@
       display: none!important;
     }
   }
+  .form-col-3 {
+    input, label {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  .contact-us-form {
+    .form-col-full {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+  }
 }
 
 // ≥992px
@@ -140,6 +152,16 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+    }
+  }
+  .headline__text {
+    font-size: 42px;
+  }
+  .contact-us-form .form-col-button {
+    justify-content: center;
+    .recapcha {
+      margin-right: 0;
+      margin-bottom: 10px;
     }
   }
 

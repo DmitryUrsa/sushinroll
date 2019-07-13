@@ -25,4 +25,19 @@ $(function() {
     }
 	});
 
+
+	// Tabs plugin source: https://codepen.io/Vikaspatel/pen/VJGYpv
+	$('.tab-menu a').on('click', function(e){
+		e.preventDefault();
+		$('.tab-menu li').removeClass('active-tab');
+		$(this).parent('li').addClass('active-tab');
+
+		/*tab-data*/
+		var hrefdata =$(this).attr('href');
+		$('.tab-data .data-content').removeClass('active-data');
+		$('.tab-data .data-content'+hrefdata+'').addClass('active-data');
+		$('.active-data').prevAll('.data-content').addClass('prev').removeClass('next');
+		$('.active-data').nextAll('.data-content').addClass('next').removeClass('prev');
+	}); 	
+
 });
