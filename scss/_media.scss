@@ -91,6 +91,7 @@
 // ≥992px
 @include media-breakpoint-down(md) {
   .header {
+    margin-top: -182px;
     .logo {
       order: 0;
       width: 50%;
@@ -208,6 +209,7 @@
     display: none;
   }
   .header {
+    margin-top: -250px;
     .logo {
       width: 100%;
       justify-content: center;

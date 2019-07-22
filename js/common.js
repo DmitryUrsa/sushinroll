@@ -14,16 +14,80 @@ $(function() {
 		draggable: '>1',
 		adaptiveHeight: true
 	});
+	$('head').append('<style id="fakeparralax-style"></style>');
 	$(window).bind('scroll', function () {
-    if ($(window).scrollTop() > 122) {
-        $('.header').addClass('fixed animated fadeInDown');
+		y = $(window).scrollTop();
+		topSection = y/3;
+		topSection = Math.floor(topSection);
+		console.log(topSection);
+		$('#fakeparralax-style').html('.sakura-3.sakura--fakeparralax::before{top:' + topSection/2 + 'px} .sakura-3.sakura--fakeparralax::after{top:calc(40% - ' + topSection/2 + 'px)}');
+		if(topSection < 80) {$('.move-up-section').css('margin-top', -topSection)}
+		
+    if (y > 122) {
+        $('.header--dropdown').addClass('fixed animated fadeInDown');
         $('main').addClass('fixed-header');
-        
     } else {
-				$('.header').removeClass('fixed animated fadeInDown');
+				$('.header--dropdown').removeClass('fixed animated fadeInDown');
 				$('main').removeClass('fixed-header');
     }
 	});
+
+	$(".parallax").scroll(function(e) {
+		console.log("parallax scrolled")
+		y = $(".parallax").scrollTop();
+		console.log("window:" + $(window).height() + "y:" + y);
+
+		if (y > 122) {
+			$('.header--dropdown').addClass('fixed animated fadeInDown');
+			$('.main-screen__block').addClass('animated fadeOutUp slow');
+			$('main').addClass('fixed-header');
+		} else {
+			$('.header--dropdown').removeClass('fixed animated fadeInDown');
+			$('.main-screen__block').removeClass('fadeOutUp');
+			$('.main-screen__block').addClass('fadeInDown');
+			$('main').removeClass('fixed-header');
+		}
+
+		$(".page").each(function(e) {
+			var t = $(this)
+				, n = t.position().top - parseFloat(t.css("marginTop").replace(/auto/, 0));
+			$(this).hasClass("anim") ? y >= n + 800 ? t.addClass("active") : t.removeClass("active") : y >= n ? t.addClass("active") : t.removeClass("active")
+		});
+		
+	});
+	/*$(".parallax").scroll(function(e) {
+		if (console.log("parallax scrolled"),
+		y = $(".parallax").scrollTop(),
+		console.log("window:" + $(window).height() + "y:" + y),
+		y > $(window).height()) {
+				var t = $(this).scrollTop();
+				console.log("st:" + t + "upper" + upper + "downer:" + downer + "lastscroll:" + lastScrollTop),
+				t > lastScrollTop ? (upper++,
+				upper > 20 && ($("header[role='banner']").fadeOut("slow"),
+				upper = 0,
+				downer = 0)) : (downer++,
+				downer > 2 && ($("header[role='banner']").fadeIn("slow"),
+				upper = 0,
+				downer = 0)),
+				0 === t && $("header[role='banner']").fadeIn("slow"),
+				lastScrollTop = t
+		} else
+				y > 10 ? ($(".main-logo").addClass("animOut"),
+				$("header[role='banner']").fadeIn("slow")) : ($(".main-logo").removeClass("animOut"),
+				$("header[role='banner']").fadeOut("slow"));
+		$(".page").each(function(e) {
+				var t = $(this)
+					, n = t.position().top - parseFloat(t.css("marginTop").replace(/auto/, 0));
+				$(this).hasClass("anim") ? y >= n + 500 ? t.addClass("active") : t.removeClass("active") : y >= n ? t.addClass("active") : t.removeClass("active")
+		}),
+		$("footer").each(function(e) {
+				var t = $(this)
+					, n = t.position().top - parseFloat(t.css("marginTop").replace(/auto/, 0))
+					, i = $(".parallax").scrollTop();
+				i >= n + 1e3 ? t.addClass("active") : t.removeClass("active"),
+				i >= n + 1600 ? t.find(".anim").addClass("active") : t.find(".anim").removeClass("active")
+		})
+	});*/
 
 
 	// Tabs plugin source: https://codepen.io/Vikaspatel/pen/VJGYpv
