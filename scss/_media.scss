@@ -90,8 +90,13 @@
 
 // ≥992px
 @include media-breakpoint-down(md) {
-  .header {
+  .header--dropdown {
     margin-top: -182px;
+  }
+  .compensate-header {
+    top: 182px;
+  }
+  .header {
     .logo {
       order: 0;
       width: 50%;
@@ -208,8 +213,13 @@
   .about-us-img__sticks {
     display: none;
   }
-  .header {
+  .header--dropdown {
     margin-top: -250px;
+  }
+  .compensate-header {
+    top: 250px;
+  }
+  .header {
     .logo {
       width: 100%;
       justify-content: center;
