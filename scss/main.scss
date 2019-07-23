@@ -169,6 +169,7 @@ b, strong {
 	margin-top: -122px;
 	width: 100%;
 	transition: all 500ms;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
 	.container {
 		position: relative;
 		display: flex;
@@ -380,7 +381,6 @@ b, strong {
 		align-items: center;
 		flex-direction: column;
 		position: relative;
-		top: 100px;
 		.ui-button {
 			margin-top: 70px;
 		}
@@ -1169,6 +1169,9 @@ table.styled-table {
 	background: transparent;
 	&-home {
 		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	&-headline {
 		height: 210px;

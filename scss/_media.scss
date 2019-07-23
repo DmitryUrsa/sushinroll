@@ -210,24 +210,31 @@
 
 // ≥576px
 @include media-breakpoint-down(xs) {
+  
   .about-us-img__sticks {
     display: none;
   }
   .header--dropdown {
-    margin-top: -250px;
+    margin-top: -87px;
   }
   .compensate-header {
-    top: 250px;
+    top: 87px;
   }
   .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
     .logo {
-      width: 100%;
+      width: 75%;
       justify-content: center;
       margin-bottom: 10px;
     }
     .contact-phone {
       width: 100%;
       align-items: center;
+      display: none;
+    }
+    .current-city {
+      display: none;
     }
   }
   .product-item {
